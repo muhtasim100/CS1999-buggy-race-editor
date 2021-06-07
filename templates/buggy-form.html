@@ -1,17 +1,120 @@
 {% extends "base.html" %}
 
 {% block content %}
+<head>
+  <style>
+  h1 {text-align: center;}
+  p {text-align: center;}
+  </style>
+</head>
 
+<body>
   <h1>Make buggy</h1>
+</body>
+
+<p>Please select attributes to design your buggy. Previously selected attributes is shown as the default.</p><br>
+<p1> Rules:<ul>
+  <li>Minimum number of tyres is 4.</li>
+  <li>Plain flag pattern must have the same primary and secondary colors.</li>
+  <li>All flag patterns except Plain flags must have different primary and secondary colors.</li>
+  <li>The number of tyres must be equal to or greater than the number of wheels.</li>
+  <li>You can only have one unit of non-consumable fuel for primary or auxiliary motive powers. The non-consumbale fuels are: fusion, thermo, solar and wind.</li>
+</ul></p1><br>
 
   <form action="/new" method="post">
-    <label for="qty_wheels">Number of wheels:</label>
-    <input type="text" name="qty_wheels" />
-    <input type="submit" class="button">
+    <label for="qty_wheels">Number of wheels (Minimum of 4):</label>
+    <input type="number" min="0" id="qty_wheels" step="2" name="qty_wheels" value="{{ buggy['qty_wheels'] }}" />
+    
+    <br><br><label for="flag_pattern">Flag pattern:</label>
+    <select name="flag_pattern" id="flag_pattern">
+      <option value="plain">plain</option>
+      <option value="hstripe">striped horizontal</option>
+      <option value="vstripe">striped vertical</option>
+      <option value="dstripe">striped diagonal</option>
+      <option value="checker">checkered</option>
+      <option value="spot">spotted</option>
+      <option selected>{{ buggy['flag_pattern'] }}</option>
+    </select>
+
+    <br><br><label for="flag_color">Flag color:</label>
+    <select name="flag_color" id="flag_color" value="white">
+      <option value="white">white</option>
+      <option value="black">black</option>
+      <option value="red">red</option>
+      <option value="yellow">yellow</option>
+      <option value="blue">blue</option>
+      <option value="green">green</option>
+      <option selected>{{ buggy['flag_color'] }}</option>
+    </select>
+
+    <br><br><label for="flag_color_secondary">Secondary flag color:</label>
+    <select name="flag_color_secondary" id="flag_color_secondary">
+      <option value="black">black</option>
+      <option value="white">white</option>
+      <option value="red">red</option>
+      <option value="yellow">yellow</option>
+      <option value="glue">blue</option>
+      <option value="green">green</option>
+      <option selected>{{ buggy['flag_color_secondary'] }}</option>
+    </select>
+
+    <br><br><label for="power_type">Primary motive power:</label>
+    <select name="power_type" id="power_type">
+      <option value="petrol">petrol</option>
+      <option value="fusion">fusion</option>
+      <option value="steam">steam</option>
+      <option value="bio">bio</option>
+      <option value="electric">electric</option>
+      <option value="rocket">rocket</option>
+      <option value="hamster">hamster</option>
+      <option value="thermo">thermo</option>
+      <option value="solar">solar</option>
+      <option value="wind">wind</option>
+      <option selected>{{ buggy['power_type'] }}</option>
+    </select>
+
+    <br><br><label for="power_units">Primary motive power units:</label>
+      <input type="number" id="power_units" min="1" name="power_units" value="{{ buggy['power_units'] }}" />
+    </select>
+
+    <br><br><label for="aux_power_type">Auxiliary motive power:</label>
+    <select name="aux_power_type" id="aux_power_type">
+      <option value="petrol">petrol</option>
+      <option value="fusion">fusion</option>
+      <option value="steam">steam</option>
+      <option value="bio">bio</option>
+      <option value="electric">electric</option>
+      <option value="rocket">rocket</option>
+      <option value="hamster">hamster</option>
+      <option value="thermo">thermo</option>
+      <option value="solar">solar</option>
+      <option value="wind">wind</option>
+      <option selected>{{ buggy['aux_power_type'] }}</option>
+    </select>
+  
+  <br><br><label for="aux_power_units">Auxiliary motive power units:</label>
+    <input type="number" id="aux_power_units" min="0" name="aux_power_units" value="{{ buggy['aux_power_units'] }}" />
+
+  <br><br><label for="tyres">Type of tyres:</label>
+  <select name="tyres" id="tyres" value="knobbly">
+    <option value="knobbly">knobbly</option>
+    <option value="slick">slick</option>
+    <option value="steelband">steelband</option>
+    <option value="reactive">reactive</option>
+    <option value="maglev">maglev</option>
+    <option selected>{{ buggy['tyres'] }}</option>
+  </select>
+
+  <br><br><label for="qty_tyres">Number of tyres:</label>
+    <input type="number" id="qty_tyres" min="1" name="qty_tyres" value="{{ buggy['qty_tyres'] }}" />
+
+  <p>
+    <br><input type="submit" class="button">
+  </p> 
   </form>
 
   <p>
-    <a href="/" class="button">home</a>
+    <a href="/" class="button">Home</a>
   </p>
 
 {% endblock %}

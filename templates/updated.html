@@ -1,14 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <style>
+    p {text-align: center;}
+    h1 {text-align: center;}
+  </style>
 
   <h1>Updated Buggy</h1>
 
   <p>
     {{ msg }}
   </p>
+
   <p>
-    <a href="/" class="button">home</a>
+    {{ costmsg }}
   </p>
 
+  <br>
+  <p>
+    <a href="/" class="button">Home</a>
+  </p>
+  <br>
+  <p>
+    <a href="/new" class="button">Back</a>
+  </p>
+
+  </br>
+  
 {% endblock %}

@@ -3,23 +3,23 @@ html{
   padding: 0; 
 }
 body {
-  font-family: sans-serif;
+  font-family: garamond, serif;
   margin: 0;
   padding: 0;
   font-size: 1.2em;
   color: #000000;
   background: repeating-linear-gradient(
-    45deg,
-    #ffffee,
-    #ffffee 2em,
-    #eeeeee 2em,
-    #eeeeee 4em
+    60deg,
+    #e2f10b,
+    #040016 2em,
+    #000000 2em,
+    #252525 4em
   );
 }
 .main-content {
   min-height: 100vh;
   padding: 1em;
-  background: #ffffff;
+  background: #dcdbe0;
   margin: 0 0 0 3em;
 }
 h1 {
@@ -29,13 +29,13 @@ p {
   margin: 1em 0;
 }
 a.button, input.button {
-  border: 1px solid #000000;
-  padding: 0.5em;
-  margin: 0.5em;
-  border-radius: 0.25em;
+  border: 3px solid #e2f10b;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 1em;
   text-decoration: none;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #1d1d1d;
+  color: #ffffff;
   box-shadow: 5px 5px 5px #999999;
 }
 a.button:hover {
@@ -44,15 +44,32 @@ a.button:hover {
 }
 input {
   padding: 0.5em;
-  font-size: 100%;
+  font-size: 70%;
+  width: 40px;
+  height: 4px;
+  
 }
 input.button {
-  background-color: #99ff99;
+  background-color: #0bf150;
+  font-family: "Lucida Console", "Courier New", monospace;
+  color: #1d1d1d;
+  border: 3px solid #1d1d1d;
+  border-radius:0px;
+  box-shadow: 3px 3px 3px #999999;
+  padding: 0.5em;
+  font-size: 100%;
+  width: 120px;
+  height: 55px;
+  position: relative;
+  left: 1.5px;
 }
 table {
   border: 1px solid #000000;
   border-collapse: collapse;
   margin: 0 0 2em 0;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 table td, table th {
   padding: 0.25em;

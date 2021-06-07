@@ -1,8 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <style>
+    h1 {text-align: center;}
+    table {text-align: center;}
+    p {text-align: center;}
+  </style>
 
-  <h1>Buggy</h1>
+  <h1>Show Buggy</h1>
 
   <table>
     <tr>
@@ -11,10 +16,40 @@
     <tr>
       <td>Wheels:</td> <td> {{ buggy['qty_wheels'] }} </td>
     </tr>
+    <tr>
+      <td>Flag pattern:</td> <td> {{ buggy['flag_pattern'] }} </td>
+    </tr>
+    <tr>
+      <td>Flag color:</td> <td> {{ buggy['flag_color'] }} </td>
+    </tr>
+    <tr>
+      <td>Secondary flag color:</td> <td> {{ buggy['flag_color_secondary'] }} </td>
+    </tr>
+    <tr>
+      <td>Primary motive power:</td> <td> {{ buggy['power_type'] }} </td>
+    </tr>
+    <tr>
+      <td>Primary motive power units:</td> <td> {{ buggy['power_units'] }} </td>
+    </tr>
+    <tr>
+      <td>Auxiliary motive power:</td> <td> {{ buggy['aux_power_type'] }} </td>
+    </tr>
+    <tr>
+      <td>Auxiliary motive power units:</td> <td> {{ buggy['aux_power_units'] }} </td>
+    </tr>
+    <tr>
+      <td>Type of tyres:</td> <td> {{ buggy['tyres'] }} </td>
+    </tr>
+    <tr>
+      <td>Number of tyres:</td> <td> {{ buggy['qty_tyres'] }} </td>
+    </tr>
+    <tr>
+      <td>Total cost:</td> <td> {{ buggy['cost'] }} </td>
+    </tr>
   </table>
 
   <p>
-    <a href="/" class="button">home</a>
+    <a href="/" class="button">Home</a>
   </p>
 
 {% endblock %}
